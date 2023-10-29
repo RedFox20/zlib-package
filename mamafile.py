@@ -23,6 +23,7 @@ class zlib(mama.BuildTarget):
         if self.zlib.should_build():
             # override to always run configure
             self.zlib.configure_command = f'configure --static --prefix {self.zlib.install_dir()}'
+            self.zlib.extra_env['CFLAGS'] = '-fPIC'
             self.zlib.build()
         else:
             console('lib/libz.a already built', color='green')

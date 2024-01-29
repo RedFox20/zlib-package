@@ -8,8 +8,8 @@ class zlib(mama.BuildTarget):
     local_workspace = 'packages'
 
     def init(self):
-        self.zlib = self.gnu_project('zlib', '1.3',
-            url='https://www.zlib.net/{{project}}.tar.gz',
+        self.zlib = self.gnu_project('zlib', '1.3.1',
+            url='http://kratt.codefox.ee/linux/{{project}}.tar.gz',
             build_products=[
                 BuildProduct('{{installed}}/lib/libz.a', None),
             ])
